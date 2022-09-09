@@ -7,41 +7,22 @@
  */
 int main(void)
 {
-	int i, j, k, l, oj, ol;
+	int n1, n2;
 
-	i = j = k = l = 48;
-	while (i < 58)
+	for (n1 = 0; n1 <= 98; n1++)
 	{
-		j = 48;
-		while (j < 58)
+		for (n2 = n1 + 1; n2 <= 99; n2++)
 		{
-			k = 48;
-			while (k < 58)
-			{
-				l = 48;
-				while (l < 58)
-				{
-					oj = (10 * i) + j;
-					ol = (10 * k) + l;
-					if (oj < ol)
-					{
-						putchar(i);
-						putchar(j);
-						putchar(' ');
-						putchar(k);
-						putchar(l);
-						if (i == 57 && j == 56 && k == 57 && l == 57)
-							break;
-						putchar(',');
-						putchar(' ');
-					}
-					l++;
-				}
-				k++;
-			}
-			j++;
+			putchar((n1 / 10) + '0');
+			putchar((n1 % 10) + '0');
+			putchar(' ');
+			putchar((n2 / 10) + '0');
+			putchar((n2 % 10) + '0');
+			if (n1 == 98 && n2 == 99)
+				break;
+			putchar(',');
+			putchar(' ');
 		}
-		i++;
 	}
 	putchar('\n');
 	return (0);
