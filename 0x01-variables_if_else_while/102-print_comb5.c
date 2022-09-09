@@ -1,13 +1,15 @@
 #include <stdio.h>
 
+/**
+ * main - Entry Point
+ *
+ * Return: always 0 (Success)
+ */
 int main(void)
 {
-	int i, j, k, l;
+	int i, j, k, l, oj, ol;
 
-	i = 48;
-	j = 48;
-	k = 48;
-	l = 48;
+	i = j = k = l = 48;
 	while (i < 58)
 	{
 		j = 48;
@@ -19,7 +21,9 @@ int main(void)
 				l = 48;
 				while (l < 58)
 				{
-					if (j != l && j < l)
+					oj = (10 * i) + j;
+					ol = (10 * k) + l;
+					if (oj < ol)
 					{
 						putchar(i);
 						putchar(j);
