@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+ * main - Entry Point
+ *
+ * Description: Print all hexadecimal chars
+ * Return: always 0 (Success)
+ */
 int main(void)
 {
 	int i;
