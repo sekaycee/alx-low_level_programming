@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	int i, j, k, l, oj, ol;
+	int i, j, k, l, colj, coll;
 
 	i = j = k = l = 48;
 	while (i < 58)
@@ -21,9 +21,9 @@ int main(void)
 				l = 48;
 				while (l < 58)
 				{
-					oj = (10 * i) + j;
-					ol = (10 * k) + l;
-					if (oj < ol)
+					colj = (10 * i) + j;
+					coll = (10 * k) + l;
+					if (coj < coll)
 					{
 						putchar(i);
 						putchar(j);
