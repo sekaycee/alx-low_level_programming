@@ -11,8 +11,8 @@ int main(void)
 
 	n1 = 1;
 	n2 = 2;
-	fn = fe = 0;
-	for (; fn <= 4000000; fn = n1 + n2)
+	fe = 0;
+	for (fn = 0; fn <= 4000000; fn = n1 + n2)
 	{
 		n1 = n2;
 		n2 = fn;
