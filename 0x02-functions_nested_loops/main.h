@@ -12,3 +12,6 @@ void times_table(void);
 int add(int, int);
 void print_to_98(int);
 
+/* function prototypes for advanced tasks */
+void print_times_table(int);
+
