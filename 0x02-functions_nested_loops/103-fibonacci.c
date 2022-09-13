@@ -7,19 +7,21 @@
  */
 int main(void)
 {
-	unsigned long int n1, n2, fn, fe;
+	int i;
+	long int n1, n2, fn, sum;
 
 	n1 = 1;
 	n2 = 2;
-	fe = 0;
-	for (fn = 0; fn <= 4000000; fn = n1 + n2)
+	sum = 0;
+	for (i = 0; i <= 33; i++)
 	{
 		n1 = n2;
 		n2 = fn;
-		if ((n1 % 2) == 0)
-			fe += n1;
+		if (n1 < 4000000 && (n1 % 2) == 0)
+			sum += n1;
+		fn = n1 + n2;
 	}
-	printf("%lu\n", fe);
+	printf("%ld\n", sum);
 	return (0);
 }
 
