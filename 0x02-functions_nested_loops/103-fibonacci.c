@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	long int n1, n2, fn, fe;
+	unsigned long int n1, n2, fn, fe;
 
 	n1 = 1;
 	n2 = 2;
@@ -19,7 +19,7 @@ int main(void)
 		if ((n1 % 2) == 0)
 			fe += n1;
 	}
-	printf("%ld\n", fe);
+	printf("%lu\n", fe);
 	return (0);
 }
 
