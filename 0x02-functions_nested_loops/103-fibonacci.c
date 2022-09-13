@@ -8,7 +8,7 @@
 int main(void)
 {
 	int i;
-	long int n1, n2, fn, sum;
+	unsigned long int n1, n2, fn, sum;
 
 	n1 = 1;
 	n2 = 2;
@@ -21,7 +21,7 @@ int main(void)
 			sum += n1;
 		fn = n1 + n2;
 	}
-	printf("%ld\n", sum);
+	printf("%lu\n", sum);
 	return (0);
 }
 
