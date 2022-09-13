@@ -13,7 +13,7 @@ int main(void)
 	n1 = 1;
 	n2 = 2;
 	sum = 0;
-	for (i = 0; i <= 33; i++)
+	for (i = 1; i <= 33; ++i)
 	{
 		n1 = n2;
 		n2 = fn;
