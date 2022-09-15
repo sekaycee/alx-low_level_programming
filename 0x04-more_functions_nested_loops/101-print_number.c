@@ -17,7 +17,7 @@ void print_number(int n)
 	{
 		j = n;
 	}
-	
+
 	k = j;
 	i = 1;
 	while (k > 9)
@@ -25,6 +25,7 @@ void print_number(int n)
 		k /= 10;
 		i *= 10;
 	}
+
 	for (; i > 0; i /= 10)
 		_putchar(((j / i) % 10) + 48);
 }
