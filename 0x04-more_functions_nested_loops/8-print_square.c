@@ -12,7 +12,7 @@ void print_square(int n)
 	{
 		for (j = 0; j < n; j++)
 			_putchar('#');
-		if (i != (n -1)
+		if (i != n - 1)
 			_putchar('\n');
 	}
 	_putchar('\n');
