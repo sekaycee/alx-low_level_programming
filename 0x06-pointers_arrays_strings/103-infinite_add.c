@@ -10,44 +10,36 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, j, k, l, m, n, o = 0;
+	int i, j, k, l, m, n;
 
-	for (i = 0; n1[i] != '\0'; i++)
+	for (i = 0; n1[i]; i++)
 		;
-	for (j = 0; n2[j] != '\0'; j++)
+	for (j = 0; n2[j]; j++)
 		;
-	if (i >= j)
-		l = i;
-	else 
-		l = j;
-	if (size_r <= l + 1)
+	if (i > size_r || j > size_r)
 		return (0);
-	r[l + 1] = '\0';
-	i--; j--; size_r--;
-	m = n1[i] - '0', n = n2[j] - '0'; 
-	for ( ; l >= 0; l--, size_r--)
+	m = 0;
+	for(i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
 	{
-		k = m + n + o;
-		if (k >= 10)
-			o = k / 10;
-		else
-			o = 0;
-		if (k > 0)
-			r[l] = (k % 10) + '0';
-		else
-			r[l] = '0';
-		if (i > 0)
-			i--, m = n1[i] - '0';
-		else
-			m = 0;
-		if (j > 0)
-			j--; n = n2[j] - '0';
-		else
-			n = 0;
+		n = m;
+		if (i >= 0)
+			n += n1[i] - '0';
+		if (j >= 0)
+			n += n2[j] - '0';
+		if (i < 0 && j < 0 && n == 0)
+			break;
+		m = n / 10;
+		r[k] = n & 10 + '0';
 	}
-	if (*(r) == '0')
-		return (r[1]);
-	else
-		return (r);
+	r[k] = '\0';
+	if (i >= 0 || j >= 0 || m)
+		return (0);
+	for (k -= 1, l = 0; l < k; k--, l++)
+	{
+		m = r[k];
+		r[k] = r[l];
+		r[l] = m;
+	}
+	return (r);
 }
 
