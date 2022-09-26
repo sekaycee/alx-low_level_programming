@@ -11,6 +11,7 @@ void print_diagsums(int *a; int size)
 {
 	int i, f_sum, s_sum;
 
+	f_sum = s_sum = 0;
 	for (i = 0; i < size; i++)
 	{
 		f_sum += *(a[i] * size[i]);
