@@ -26,7 +26,7 @@ int _strcmp_recursion(char *s, int i, int j)
 	{
 		if (i == j || i == j + 1)
 			return (1);
-		return (0 + _strcmp_recursion(s, 1 + 1, j - 1));
+		return (0 + _strcmp_recursion(s, i + 1, j - 1));
 	}
 	return (0);
 }
