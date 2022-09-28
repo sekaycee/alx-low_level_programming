@@ -13,7 +13,7 @@ int pow_op(int n, int i)
 		if (i * (n / i) == n)
 			return (i);
 		else
-			return(-1);
+			return (-1);
 	}
 	return (0 + pow_op(n, i + 1));
 }
