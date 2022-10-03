@@ -8,16 +8,16 @@
  */
 char *_strdup(char *str)
 {
-	unsigned int i, j;
+	unsigned int i, c;
 	char *s;
 
-	for (j = 0; str[j] != '\0'; j++)
+	for (c = 0; str[c] != '\0'; c++)
 		;
-	j++;
-	s = malloc(sizeof(char) * j);
-	if (!s)
+	c++;
+	s = malloc(sizeof(char) * c);
+	if (!s || !str)
 		return (0);
-	for (i = 0; i < j; i++)
+	for (i = 0; i < c; i++)
 		s[i] = str[i];
 	return (s);
 }
