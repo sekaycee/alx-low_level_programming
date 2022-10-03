@@ -5,7 +5,7 @@
  * @grid: 2d array
  * @height: number of rows in array
  */
-void free_matrix(char** grid, unsigned int height)
+void free_matrix(char **grid, unsigned int height)
 {
 	unsigned int i;
 
