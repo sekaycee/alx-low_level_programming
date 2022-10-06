@@ -77,13 +77,11 @@ int main(int argc, char **argv)
 		l1++;
 	while (*(argv[2] + l2))
 		l2++;
-
 	a = malloc(l1 * sizeof(int));
 	b = malloc(l2 * sizeof(int));
 	p = _calloc(l1 + l2 + 1, sizeof(int));
 	if (!a || !b || !p)
 		Error();
-
 	for (i = l1 - 1, j = 0; i >= 0; i--, j++)
 		a[j] = s1[i] - '0';
 	for (i = l2 - 1, j = 0; i >= 0; i--, j++)
@@ -92,17 +90,12 @@ int main(int argc, char **argv)
 		for (j = 0; j < l1; j++)
 			p[i + j] += b[i] * a[j];
 	for (i = 0; i < l1 + l2; i++)
-	{
-		c = p[i] / 10;
-		p[i] = p[i] % 10;
-		p[i + 1] += c;
-	}
+		c = p[i] / 10, p[i] %= 10, p[i + 1] += c;
 	for (i = l1 + l2; i >= 0; i--)
 		if (p[i] > 0)
 			break;
 	for (; i >= 0; i--)
 		_putchar(p[i] + '0');
-
 	_putchar('\n');
 	free(a), free(b), free(p);
 	return (0);
