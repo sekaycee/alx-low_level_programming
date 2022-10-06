@@ -95,7 +95,7 @@ int main(int argc, char **argv)
 	{
 		c = p[i] / 10;
 		p[i] = p[i] % 10;
-		p[i + 1] += c; 
+		p[i + 1] += c;
 	}
 	for (i = l1 + l2; i >= 0; i--)
 		if (p[i] > 0)
