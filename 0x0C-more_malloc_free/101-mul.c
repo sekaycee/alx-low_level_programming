@@ -20,7 +20,7 @@ void Error(void)
  * @grid: array of characters
  * Return: 1 all digits 0 otherwise
  */
-int allDigits(char **arg)
+int is_digit(char **grid)
 {
 	int i, j;
 
@@ -65,7 +65,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
  */
 int main(int argc, char **argv)
 {
-	int i, j, c, len, len_s1 = 0, len_s2 = 0;
+	int i, j, c, l1 = 0, l2 = 0;
 	char *s1 = argv[1], *s2 = argv[2];
 	int *a, *b, *p;
 
@@ -73,32 +73,31 @@ int main(int argc, char **argv)
 		Error();
 	if (*s1 == '0' || *s2 == '0')
 		_putchar('0');
-	while (*(argv[1] + len_s1))
-		len_s1++;
-	while (*(argv[2] + len_s2))
-		len_s2++;
+	while (*(argv[1] + l1))
+		l1++;
+	while (*(argv[2] + l2))
+		l2++;
 
-	len = len_s1 + len_s2 + 1;
-	a = malloc(len_s1 * sizeof(int));
-	b = malloc(len_s2 * sizeof(int));
-	p = _calloc(len, sizeof(int));
+	a = malloc(l1 * sizeof(int));
+	b = malloc(l2 * sizeof(int));
+	p = _calloc(l1 + l2 + 1, sizeof(int));
 	if (!a || !b || !p)
 		Error();
 
-	for (i = len_s1 - 1, j = 0; i >= 0; i--, j++)
+	for (i = l1 - 1, j = 0; i >= 0; i--, j++)
 		a[j] = s1[i] - '0';
-	for (i = len_s2 - 1, j = 0; i >= 0; i--, j++)
+	for (i = l2 - 1, j = 0; i >= 0; i--, j++)
 		b[j] = s2[i] - '0';
-	for (i = 0; i < len_s2; i++)
-		for (j = 0; j < len_s1; j++)
+	for (i = 0; i < l2; i++)
+		for (j = 0; j < l1; j++)
 			p[i + j] += b[i] * a[j];
-	for (i = 0; i < len_s1 + len_s2; i++)
+	for (i = 0; i < l1 + l2; i++)
 	{
 		c = p[i] / 10;
 		p[i] = p[i] % 10;
 		p[i + 1] += c; 
 	}
-	for (i = len_s1 + len_s2; i >= 0; i--)
+	for (i = l1 + l2; i >= 0; i--)
 		if (p[i] > 0)
 			break;
 	for (; i >= 0; i--)
@@ -108,3 +107,4 @@ int main(int argc, char **argv)
 	free(a), free(b), free(p);
 	return (0);
 }
+
