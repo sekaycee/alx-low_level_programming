@@ -26,7 +26,7 @@ void print_all(const char * const format, ...)
 			break;
 		case 's':
 			s = va_arg(al, char *);
-			if (str)
+			if (s)
 			{
 				printf("%s", s);
 				break;
@@ -41,6 +41,7 @@ void print_all(const char * const format, ...)
 			printf(", ");
 		i++;
 	}
+
 	printf("\n");
 	va_end(al);
 }
