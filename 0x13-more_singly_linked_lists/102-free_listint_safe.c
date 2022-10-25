@@ -11,8 +11,11 @@ void free_listp2(listp_t **head)
 	if (head)
 	{
 		curr = *head;
-		for (; tmp = curr; curr = curr->next)
+		while ((tmp = curr))
+		{
+			curr = curr->next;
 			free(tmp);
+		}
 		*head = NULL;
 	}
 }

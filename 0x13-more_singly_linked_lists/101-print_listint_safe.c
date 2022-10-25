@@ -10,8 +10,12 @@ void free_listp(listp_t **head)
 
 	if (head)
 	{
-		for (curr = *head; tmp = curr; curr = curr->next)
+		curr = *head;
+		while ((tmp = curr))
+		{
+			curr = curr->next;
 			free(tmp);
+		}
 		*head = NULL;
 	}
 }
