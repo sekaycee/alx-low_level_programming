@@ -12,7 +12,7 @@ void free_listp2(listp_t **head)
 	{
 		curr = *head;
 		for (; tmp = curr; curr = curr->next)
-			free(temp);
+			free(tmp);
 		*head = NULL;
 	}
 }
