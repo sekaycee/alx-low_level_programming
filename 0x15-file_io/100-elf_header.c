@@ -220,7 +220,6 @@ void print_entry(unsigned long int addr, unsigned char *buf)
 
 	if (buf[EI_CLASS] == ELFCLASS32)
 		printf("%#x\n", (unsigned int)addr);
-
 	else
 		printf("%#lx\n", addr);
 }
