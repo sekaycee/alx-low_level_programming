@@ -195,7 +195,7 @@ int check_elf(char *ptr)
  */
 int main(int argc, char *argv[])
 {
-	int fd, ret_read;
+	int fd, rr;
 	char ptr[27];
 
 	if (argc != 2)
@@ -212,8 +212,8 @@ int main(int argc, char *argv[])
 	}
 
 	lseek(fd, 0, SEEK_SET);
-	ret_read = read(fd, ptr, 27);
-	if (ret_read == -1)
+	rr = read(fd, ptr, 27);
+	if (rr == -1)
 	{
 		dprintf(STDERR_FILENO, "Err: The file can not be read\n");
 		exit(98);
