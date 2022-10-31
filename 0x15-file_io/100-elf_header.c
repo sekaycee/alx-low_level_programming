@@ -6,6 +6,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void check_elf(unsigned char *);
+void print_magic(unsigned char *);
+void print_class(unsigned char *);
+void print_data(unsigned char *);
+void print_version(unsigned char *);
+void print_abi(unsigned char *);
+void print_osabi(unsigned char *);
+void print_type(unsigned int, unsigned char *);
+void print_entry(unsigned long int, unsigned char *);
+void close_elf(int);
+
 /**
  * check_elf - check if a file is an ELF file
  * @buf: pointer to an array containing the ELF magic numbers
