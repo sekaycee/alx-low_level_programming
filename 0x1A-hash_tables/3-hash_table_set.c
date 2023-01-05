@@ -1,11 +1,11 @@
 #include "hash_tables.h"
 
 /**
- *hash_table_set - add an element to the hash table
- *@ht: pointer to the hash
- *@key: pointer to the key
- *@value: value to add
- *Return: 1 if is success or 0
+ * hash_table_set - add an element to the hash table
+ * @ht: pointer to the hash
+ * @key: pointer to the key
+ * @value: value to add
+ * Return: 1 if success or 0 otherwise
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
@@ -25,7 +25,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 
 	new_node = malloc(sizeof(hash_node_t));
-
 	if (new_node == NULL)
 		return (0);
 
