@@ -2,7 +2,7 @@
 
 /**
  * hash_djb2 - generate a random number through
- * 	a given string (hash number)
+ * a given string (hash number)
  * @str: string
  * Return: hash number
  */
