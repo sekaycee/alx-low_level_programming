@@ -60,14 +60,12 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		}
 		tmp = tmp->snext;
 	}
-
 	new = malloc(sizeof(shash_node_t));
 	if (new == NULL)
 	{
 		free(valcpy);
 		return (0);
 	}
-
 	new->key = strdup(key);
 	if (new->key == NULL)
 	{
@@ -75,7 +73,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		free(new);
 		return (0);
 	}
-
 	new->value = valcpy;
 	new->next = ht->array[i];
 	ht->array[i] = new;
