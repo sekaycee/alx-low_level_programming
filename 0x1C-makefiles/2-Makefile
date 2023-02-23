@@ -1,0 +1,12 @@
+CC=gcc
+SRC=main.c school.c
+OBJ=main.o school.o
+
+all:
+	$(CC) $(OBJ) -o school
+
+main.o: main.c
+	$(CC) -c $<
+
+school.o: school.c
+	$(CC) -c $<
