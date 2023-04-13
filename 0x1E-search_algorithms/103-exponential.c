@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * _recurse - Search for a value in a sorted array
+ * _bsearch - Search for a value in a sorted array
  *            of integers using binary search
  *
  * @array: a pointer to the first element of the array to search
@@ -13,7 +13,7 @@
  *
  * Description: Print the [sub]array being searched after each change
  */
-int _recurse(int *array, size_t prev, size_t next, int value)
+int _bsearch(int *array, size_t prev, size_t next, int value)
 {
 	size_t i;
 
@@ -35,7 +35,6 @@ int _recurse(int *array, size_t prev, size_t next, int value)
 		else
 			prev = i + 1;
 	}
-
 	return (-1);
 }
 
@@ -64,5 +63,5 @@ int exponential_search(int *array, size_t size, int value)
 
 	next = i < size ? i : size - 1;
 	printf("Value found between indexes [%ld] and [%ld]\n", i / 2, next);
-	return (_recurse(array, i / 2, next, value));
+	return (_bsearch(array, i / 2, next, value));
 }
